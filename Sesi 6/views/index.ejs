@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home | Latihan</title>
+  </head>
+  <body>
+    <H1 style="text-align: center">INJS-KS-01</H1>
+
+    <h3>Instruktur: <%= instruktur %></h3>
+
+    <h3>Tambah Peserta</h3>
+    <form action="/" method="POST">
+      <label>Nama</label>
+      <input type="text" name="nama" />
+      <label>Kode Peserta</label>
+      <input type="text" name="kode" />
+      <button type="submit">Tambahkan!</button>
+    </form>
+
+    <h3>Daftar Peserta:</h3>
+    <p>Cari Peserta</p>
+    <form action="/" method="get">
+      <input type="text" name="search" />
+      <button type="submit">Search</button>
+    </form>
+    <ul>
+      <% peserta.forEach(p => {%>
+      <li><%= p.nama %> | <%= p.kode %></li>
+      <%}) %>
+    </ul>
+  </body>
+</html>
